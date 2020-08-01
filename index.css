@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: 'Recursive', sans-serif;
+}
+#topArea {
+  width: 100vw; height: 10vh;
+  background-color: #696969;
+}
+#fillWidth {
+  padding-top: 2.5vh;
+  width: 100vw; height: 5vh;
+  text-align: center;
+}
+#mainCounter {
+  display: block;
+  margin: 0 auto 0 auto;
+  height: 5vh;
+  box-shadow: 0 0 1vh #222;
+}
+#countTxt {
+  color: white; text-shadow: 0 0 1vh white;
+  font-size: 2vh;
+}
+
+#middleAreaI {
+  padding: 1vh 0 0 0;
+  width: 100vw; height: 3vh;
+  background-color: #696969;
+}
+#countButton {
+  position: absolute;
+  left: 40vw;
+  width: 20vw;
+  color: white; text-shadow: 0 0 1vh white; font-size: 2.5vh; text-align: center;
+  margin: 0 auto;
+}
+
+#middleAreaII {
+  width: 100vw; height: 6vh;
+}
+
+#bottomArea {
+  width: 100vw; height: 80vh;
+  background-color: #696969;
+}
