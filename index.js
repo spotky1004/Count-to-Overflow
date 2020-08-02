@@ -135,11 +135,11 @@ function setCounter() {
   countUp(npc*tickGain);
 }
 function setMachinesCh() {
-  machinesCh[0] = 2/(machines[0]**1.1+1)*(digitsNow**1.6+1);
-  machinesCh[1] = 0.8/(machines[1]**1.1+1)*(digitsNow**2+1)-1.3;
-  machinesCh[2] = 0.5/(machines[2]**1.1+1)*(digitsNow**1.8+1)-4;
-  machinesCh[3] = 0.3/(machines[3]**1.1+1)*(digitsNow**1.8+1)-8;
-  machinesCh[4] = 0.3/(machines[4]**1.1+1)*(digitsNow**1.8+1)-16;
+  machinesCh[0] = 2/(1.1**machines[0])*(1.5**digitsNow);
+  machinesCh[1] = 1/(1.1**machines[1])*(1.5**digitsNow)-2;
+  machinesCh[2] = 1/(1.1**machines[2])*(1.5**digitsNow)-3;
+  machinesCh[3] = 1/(1.1**machines[3])*(1.5**digitsNow)-7;
+  machinesCh[4] = 1/(1.1**machines[4])*(1.5**digitsNow)-11.2;
 }
 
 window.onload = function() {
