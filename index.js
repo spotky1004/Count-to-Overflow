@@ -27,6 +27,7 @@ machines = [
   0, 0, 0, 0, 0, 0, 0, 0,
   0, 0, 0, 0, 0, 0, 0, 0
 ];
+machineExist = 5;
 
 function notation(num, dim) {
   if (!isFinite(num)) {
@@ -86,7 +87,7 @@ function gameLoad() {
 }
 
 function rollMachines() {
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < machineExist; i++) {
     if (Math.random() < machinesCh[i]) {
       machines[i]++;
     }
@@ -115,7 +116,7 @@ function displayTab1() {
   $('#cps').html(function (index,html) {
     return notation(npc);
   });
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < machineExist; i++) {
     $('.machineHave:eq(' + i + ')').html(function (index,html) {
       return machines[i];
     });
@@ -130,13 +131,15 @@ function setAll() {
   setMachinesCh();
 }
 function setCounter() {
-  npc = machines[0]+machines[1]*5+machines[2]*25;
+  npc = machines[0]+machines[1]*15+machines[2]*120+machines[3]*1.111e3+machines[4]*9.001e3;
   countUp(npc*tickGain);
 }
 function setMachinesCh() {
   machinesCh[0] = 2/(machines[0]**1.1+1)*(digitsNow**1.6+1);
-  machinesCh[1] = 0.4/(machines[1]**1.1+1)*(digitsNow**2+1)-1.3;
-  machinesCh[2] = 0.2/(machines[2]**1.25+1)*(digitsNow**2.1+1)-4;
+  machinesCh[1] = 0.8/(machines[1]**1.1+1)*(digitsNow**2+1)-1.3;
+  machinesCh[2] = 0.5/(machines[2]**1.1+1)*(digitsNow**1.8+1)-4;
+  machinesCh[3] = 0.3/(machines[3]**1.1+1)*(digitsNow**1.8+1)-8;
+  machinesCh[4] = 0.3/(machines[4]**1.1+1)*(digitsNow**1.8+1)-16;
 }
 
 window.onload = function() {

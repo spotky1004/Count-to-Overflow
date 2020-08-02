@@ -37,7 +37,13 @@ function counter(counterElement, num, digit) {
   }
   elementThis.style.width = (3.3*digit+0.3) + 'vh';
   try {
-    setDigitPos(counterElement, num, digit);
+    document.querySelector(counterElement  + ' > .counterNumArea > .counterNumFrame:nth-child(1)').textContent;
+  } catch {
+    numArea = document.createElement('span');
+    numArea.className += "counterNumArea";
+    elementThis.appendChild(numArea);
+  }
+  try {
     if (digit < document.querySelectorAll(counterElement  + ' > .counterNumArea > .counterNumFrame').length) {
       toDelete = document.querySelectorAll(counterElement  + ' > .counterNumArea > .counterNumFrame').length-digit;
       for (var i = 0; i < toDelete; i++) {
@@ -45,10 +51,8 @@ function counter(counterElement, num, digit) {
         toDeleteElement.remove();
       }
     }
+    setDigitPos(counterElement, num, digit);
   } catch {
-    numArea = document.createElement('span');
-    numArea.className += "counterNumArea";
-    elementThis.appendChild(numArea);
     numAreaElement = document.querySelector(counterElement + ' > .counterNumArea');
     for (var i = digitTried-1; i < digit; i++) {
       frameThis = document.createElement('span');
