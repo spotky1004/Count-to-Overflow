@@ -1,7 +1,7 @@
 var digitTried = 0;
 
 function setDigitPos(counterElement, num, digit) {
-  if (num > 1e15) {
+  if (num > 10**digit) {
     num = (Number(num).toExponential(digit-6)).toString().replace('+', '');
     if (num < 1e100) {
       num = num.replace('e', 'e0');

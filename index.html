@@ -5,10 +5,11 @@
     <meta name="viewport" content="user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="counter.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="counter.js"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="counter.cs?ver=0.1s">
+    <link rel="stylesheet" href="index.css?ver=0.1">
+    <script src="counter.js?ver=0.1"></script>
+    <script src="var.js?ver=0.1"></script>
+    <script src="index.js?ver=0.1"></script>
     <title>Count to Overflow</title>
   </head>
   <body>
@@ -21,16 +22,76 @@
         Count!
       </div>
     </div>
-    <div id="middleAreaI">
+    <div id="middleArea">
       <div id="countButton" onclick="countUp(1)">
         Count Up!
       </div>
-    </div>
-    <div id="middleAreaII">
-
+      <div id="resetButton" onclick="countUp(-number);digitsNow=1;">
+        Count Reset!
+      </div>
     </div>
     <div id="bottomArea">
-
+      <div id="tab1">
+        <div id="basicStatus">
+          count per sec: <span id="cps">0</span>
+        </div>
+        <div id="machines">
+          <div id="machinesTxt">
+            Machines
+          </div>
+          <div id="machineArea">
+            <div class="machineSection">
+              <div class="machineSectionName">
+                Basic
+              </div>
+              <div class="machineLine">
+                <span class="machine">
+                  <div class="machineName">
+                    Counter
+                  </div>
+                  <div class="machineHave">
+                    1
+                  </div>
+                  <div class="machineEffect">
+                    +1 c/s
+                  </div>
+                  <div class="machincChance">
+                    100%
+                  </div>
+                </span>
+                <span class="machine">
+                  <div class="machineName">
+                    Mega Counter
+                  </div>
+                  <div class="machineHave">
+                    0
+                  </div>
+                  <div class="machineEffect">
+                    +5 c/s
+                  </div>
+                  <div class="machincChance">
+                    100%
+                  </div>
+                </span>
+                <span class="machine">
+                  <div class="machineName">
+                    Ultra Counter
+                  </div>
+                  <div class="machineHave">
+                    0
+                  </div>
+                  <div class="machineEffect">
+                    +25 c/s
+                  </div>
+                  <div class="machincChance">
+                    100%
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

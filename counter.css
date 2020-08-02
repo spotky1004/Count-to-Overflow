@@ -18,5 +18,5 @@
   position: absolute;
   font-size: 5vh;
   font-family: 'Recursive', sans-serif; color: white; text-shadow: 0 0 0.8vh white;
-  transition: top 0.2s ease;
+  transition: top 0.3s ease;
 }

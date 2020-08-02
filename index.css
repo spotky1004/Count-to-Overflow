@@ -20,28 +20,129 @@
   box-shadow: 0 0 1vh #222;
 }
 #countTxt {
-  color: white; text-shadow: 0 0 1vh white;
-  font-size: 2vh;
+  color: white; text-shadow: 0 0 1vh white; font-size: 2vh;
 }
 
-#middleAreaI {
+#middleArea {
+  position: relative;
   padding: 1vh 0 0 0;
-  width: 100vw; height: 3vh;
+  width: 100vw; height: 7vh;
   background-color: #696969;
 }
 #countButton {
+  margin: 0 auto;
   position: absolute;
   left: 40vw;
   width: 20vw;
   color: white; text-shadow: 0 0 1vh white; font-size: 2.5vh; text-align: center;
-  margin: 0 auto;
+  background-color: rgba(128, 128, 128, 0.6); border-radius: 1vh;
+  transition: all 0.15s ease-in-out;
 }
-
-#middleAreaII {
-  width: 100vw; height: 6vh;
+#countButton:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4); box-shadow: 0 0 1vh #fff;
+  transition: all 0.15s ease-in-out;
+}
+#countButton:active {
+  transform: scale(1);
+  background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 0 1vh #fff;
+  transition: all 0s;
+}
+#resetButton {
+  margin: 0 auto;
+  position: absolute;
+  left: 40vw; top: 5vh;
+  width: 20vw;
+  color: white; text-shadow: 0 0 1vh white; font-size: 2.5vh; text-align: center;
+  background-color: rgba(235, 209, 209, 0.6); border-radius: 1vh;
+  transition: all 0.15s ease-in-out;
+}
+#resetButton:hover {
+  transform: scale(1.1);
+  background-color: rgba(227, 141, 141, 0.4); box-shadow: 0 0 1vh #e38d8d;
+  transition: all 0.15s ease-in-out;
+}
+#resetButton:active {
+  transform: scale(1);
+  background-color: rgba(227, 141, 141, 0.8); box-shadow: 0 0 1vh #e38d8d;
+  transition: all 0s;
 }
 
 #bottomArea {
-  width: 100vw; height: 80vh;
+  width: 100vw; height: 82vh;
   background-color: #696969;
+}
+#basicStatus {
+  width: 100vw; height: 3vh;
+  color: white; text-shadow: 0 0 1vh white; font-size: 2.5vh; text-align: center;
+}
+#machinesTxt {
+  margin: 0 0 0 14vw; padding: 1vh 0 0 0;
+  width: 15vw; height: 3vh;
+  font-size: 2vh; text-align: center;
+  background-color: rgba(255, 255, 255, 0.4); border-radius: 1vh 1vh 0 0;
+  animation: machinesTxtPulse linear 10s infinite; transition: all 0.2s ease-in-out;
+}
+@keyframes machinesTxtPulse {
+  from {
+    color: #fff;
+    text-shadow: 0 0 0.7vh #3d3d40;
+  }
+  50% {
+    color: #ccc;
+    text-shadow: 0 0 1.2vh #090d42;
+  }
+  to {
+    color: #fff;
+    text-shadow: 0 0 0.7vh #3d3d40;
+  }
+}
+#machinesTxt:hover {
+  transform: scale(1.1) translateY(-0.2vh);
+  background-color: rgba(157, 213, 235, 0.6);
+}
+#machinesTxt:active {
+  transform: scale(1) translateY(0);
+  background-color: rgba(255, 255, 255, 0.4); border-radius: 1vh 1vh 0 0;
+  transition: all 0s;
+}
+#machineArea {
+  margin: 0 auto; padding: 1vh;
+  width: 80vw; height: 70vh;
+  background-color: rgba(200, 200, 200, 0.2); border-radius: 2vh;
+}
+.machineSection {
+  margin: 0 auto 1vh auto; padding: 0 0 0 1vh;
+  width: 80vh; height: 14vh;
+  background-color: rgba(150, 150, 150, 0.8); border-radius: 1vh;
+}
+.machineSectionName {
+  margin: 0 0 0 1vw; padding: 0.5vh 0 0.5vh 0;
+  color: white; text-shadow: 0 0 1vh white; font-size: 2vh;
+}
+.machine {
+  margin-right: 1vh;
+  display: block; float: left;
+  width: 10vh; height: 10vh;
+  background-color: rgba(200, 200, 200, 0.6); border-radius: 1vh;
+}
+.machineName {
+  padding-top: 0.4vh;
+  width: 10vh; height: 1.2vh;
+  font-size: 1.2vh; color: white; text-shadow: 0 0 0.5vh white; text-align: center;
+}
+.machineHave {
+  margin-top: 0.4vh;
+  width: 10vh; height: 4vh;
+  font-size: 4vh; color: #eee; text-shadow: 0 0 0.5vh #eee; text-align: center;
+}
+.machineEffect {
+  margin-top: 0.4vh;
+  width: 10vh; height: 1.6vh;
+  font-size: 1.6vh; color: #2e2b2b; text-shadow: 0 0 0.5vh #2e2b2b; text-align: center;
+}
+.machincChance {
+  margin-top: 0.4vh;
+  width: 10vh; height: 1.3vh;
+  font-size: 1.3vh; color: #e1edf0; text-shadow: 0 0 0.5vh #e1edf0; text-align: center;
 }
