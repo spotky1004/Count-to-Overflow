@@ -1,3 +1,5 @@
+savePoint = 'countToOverflow';
+
 number = 0;
 npc = 0;
 tabNow = 0;
@@ -5,8 +7,26 @@ digitsNow = 1;
 timeNow = new Date().getTime();
 timeBef = new Date().getTime();
 timeSpeed = 1;
-machinesCh = [0, 0, 0, 0, 0, 0, 0, 0];
-machines = [0, 0, 0, 0, 0, 0, 0, 0];
+machinesCh = [
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+];
+machines = [
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0
+];
 
 function notation(num, dim) {
   if (!isFinite(num)) {
@@ -44,6 +64,25 @@ function countUp(num) {
     rollMachines();
   }
   counter('#mainCounter', number, digitsNow);
+}
+function gameSave() {
+  saveFile = [];
+  for (var i = 0; i < varData.length; i++) {
+    saveFile[i] = eval(varData[i]);
+  }
+  localStorage[savePoint] = JSON.stringify(saveFile);
+}
+function gameLoad() {
+  try {
+    savedFile = JSON.parse(localStorage[savePoint]);
+    dataCopy = JSON.parse(JSON.stringify(resetData));
+    Object.assign(dataCopy, savedFile);
+    for (var i = 0; i < varData.length; i++) {
+      this[varData[i]] = dataCopy[i];
+    }
+  } catch (e) {
+
+  }
 }
 
 function rollMachines() {
@@ -95,17 +134,21 @@ function setCounter() {
   countUp(npc*tickGain);
 }
 function setMachinesCh() {
-  machinesCh[0] = 1/(machines[0]**1.5+1)*(digitsNow**1.5+1);
-  machinesCh[1] = 0.5/(machines[1]**1.5+1)*(digitsNow**1.6+1)-3;
-  machinesCh[2] = 0.4/(machines[2]**1.6+1)*(digitsNow**1.7+1)-6;
+  machinesCh[0] = 2/(machines[0]**1.1+1)*(digitsNow**1.6+1);
+  machinesCh[1] = 0.4/(machines[1]**1.1+1)*(digitsNow**2+1)-1.3;
+  machinesCh[2] = 0.2/(machines[2]**1.25+1)*(digitsNow**2.1+1)-4;
 }
 
 window.onload = function() {
   setCounters();
+  gameLoad();
   setInterval( function () {
     timeNow = new Date().getTime();
     tickGain = (timeNow-timeBef)/1000*timeSpeed;
     gameLoop();
     timeBef = new Date().getTime();
   }, 33);
+  setInterval( function () {
+    gameSave();
+  }, 3000);
 }

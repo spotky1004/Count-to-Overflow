@@ -7,3 +7,20 @@ standardNotation2 = [
 standardNotation3 = [
   'dc', 'vg', 'tg', 'qag', 'qig', 'sxg', 'spg', 'ocg', 'nog', 'ce'
 ];
+varData = [
+  'number', 'digitsNow', 'machines'
+];
+resetData = {
+  0: 0,
+  1: 1,
+  2: [
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0
+    ]
+};
