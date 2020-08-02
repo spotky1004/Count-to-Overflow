@@ -96,7 +96,7 @@ function setCounter() {
 }
 function setMachinesCh() {
   machinesCh[0] = 1/(machines[0]**1.5+1)*(digitsNow**1.5+1);
-  machinesCh[1] = 0.5/(machines[1]**1.5+1)*(digitsNow**1.6+1)-4;
+  machinesCh[1] = 0.5/(machines[1]**1.5+1)*(digitsNow**1.6+1)-3;
   machinesCh[2] = 0.4/(machines[2]**1.6+1)*(digitsNow**1.7+1)-6;
 }
 
